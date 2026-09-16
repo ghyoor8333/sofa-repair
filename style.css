@@ -13,12 +13,14 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 body {
   font-family: "DM Sans", sans-serif;
   color: var(--text);
   line-height: 1.7;
   background: #fff;
+  overflow-x: clip;
 }
 h1,
 h2,
