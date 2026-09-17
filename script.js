@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const year = document.getElementById("year");
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 
   // Close mobile navbar after clicking a link
   document.querySelectorAll("#mainNav .nav-link").forEach(function(link) {
@@ -14,6 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Demo enquiry form
   const form = document.getElementById("contactForm");
   const message = document.getElementById("formMessage");
+
+  if (!form || !message) {
+    return;
+  }
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();

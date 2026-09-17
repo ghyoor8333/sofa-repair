@@ -2,6 +2,10 @@
 
 Files:
 - index.html
+- services.html
+- blog.html
+- blog-detail.html
+- about.html
 - style.css
 - script.js
 
