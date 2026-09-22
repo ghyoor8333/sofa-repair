@@ -109,6 +109,9 @@ a {
     #28506c 62%,
     #39657d 100%
   );
+  /* background:
+        linear-gradient(rgba(17, 17, 17, 0.55), rgba(15, 15, 15, 0.55)),
+        url("images/sofa-banner.png") center center / cover no-repeat; */
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -258,7 +261,7 @@ a {
   font-size: 14px;
 }
 .section-padding {
-  padding: 90px 0;
+  padding: 60px 0;
 }
 .section-heading {
   max-width: 800px;
@@ -417,6 +420,55 @@ a {
 .gallery-section {
   background: #f9f6f6;
 }
+.gallery-slider {
+  position: relative;
+  padding: 0 34px;
+}
+.gallery-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 10px 2px 18px;
+}
+.gallery-track::-webkit-scrollbar {
+  display: none;
+}
+.gallery-item {
+  flex: 0 0 calc((100% - 48px) / 3);
+  scroll-snap-align: start;
+}
+.gallery-control {
+  position: absolute;
+  top: 45%;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--dark);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 5px 15px rgba(23, 56, 84, 0.2);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.gallery-control:hover {
+  background: var(--orange);
+  transform: translateY(-2px);
+}
+.gallery-control:focus-visible {
+  outline: 3px solid #ffd0aa;
+  outline-offset: 2px;
+}
+.gallery-control-prev {
+  left: 0;
+}
+.gallery-control-next {
+  right: 0;
+}
 .gallery-item {
   height: 100%;
   margin: 0;
@@ -441,6 +493,26 @@ a {
   color: var(--dark);
   font-size: 14px;
   font-weight: 700;
+}
+@media (max-width: 991.98px) {
+  .gallery-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+@media (max-width: 575.98px) {
+  .gallery-slider {
+    padding: 0 28px;
+  }
+  .gallery-track {
+    gap: 16px;
+  }
+  .gallery-item {
+    flex-basis: 100%;
+  }
+  .gallery-control {
+    width: 34px;
+    height: 34px;
+  }
 }
 .about-section {
   background: var(--light);
@@ -681,11 +753,14 @@ footer hr {
   transform: scale(1.06);
 }
 .services-hero {
-  background: linear-gradient(120deg, var(--dark) 0%, #28506c 62%, #39657d 100%);
-  color: #fff;
-  padding: 54px 0 60px;
-  position: relative;
-  overflow: hidden;
+    background:
+        linear-gradient(rgba(7, 14, 29, 0.55), rgba(7, 14, 31, 0.55)),
+        url("images/sofa-banner.png") center center / cover no-repeat;
+
+    color: #fff;
+    padding: 54px 0 60px;
+    position: relative;
+    overflow: hidden;
 }
 .services-hero:after {
   content: "";
@@ -1289,7 +1364,10 @@ footer hr {
   font-weight: 700;
 }
 .about-hero {
-  background: linear-gradient(120deg, var(--dark), #39657d);
+ background:
+        linear-gradient(rgba(7, 14, 29, 0.55), rgba(7, 14, 31, 0.55)),
+        url("images/sofa-banner.png") center center / cover no-repeat;
+
   color: #fff;
   overflow: hidden;
   padding: 50px 0 60px;

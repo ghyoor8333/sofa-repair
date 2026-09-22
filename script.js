@@ -14,6 +14,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  const galleryTrack = document.querySelector(".gallery-track");
+  const previousGalleryButton = document.querySelector(".gallery-control-prev");
+  const nextGalleryButton = document.querySelector(".gallery-control-next");
+
+  if (galleryTrack && previousGalleryButton && nextGalleryButton) {
+    const moveGallery = function (direction) {
+      const galleryItem = galleryTrack.querySelector(".gallery-item");
+      if (!galleryItem) {
+        return;
+      }
+
+      const gap = parseFloat(getComputedStyle(galleryTrack).gap) || 0;
+      galleryTrack.scrollBy({
+        left: direction * (galleryItem.offsetWidth + gap),
+        behavior: "smooth"
+      });
+    };
+
+    previousGalleryButton.addEventListener("click", function () {
+      moveGallery(-1);
+    });
+    nextGalleryButton.addEventListener("click", function () {
+      moveGallery(1);
+    });
+  }
+
   // Demo enquiry form
   const form = document.getElementById("contactForm");
   const message = document.getElementById("formMessage");
