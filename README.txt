@@ -17,7 +17,7 @@ Technology:
 - Vanilla JavaScript
 
 Important:
-1. Replace +91 99999 99999 in index.html with the real business phone number.
+1. Replace +91 9997939525 in index.html with the real business phone number.
 2. Replace WhatsApp number in the wa.me links with the real WhatsApp number.
 3. Replace the CSS illustration blocks with actual website photos when available.
 4. The enquiry form is currently a front-end demo. Connect it to PHP/API/WhatsApp/backend for real lead submission.
