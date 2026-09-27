@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
     year.textContent = new Date().getFullYear();
   }
 
+  const whatsappUrl = "https://api.whatsapp.com/send?phone=919997939525&text=Hi%20Athar%20Sofa%20Repair%20Center%21%20I%20need%20sofa%20repair%20in%20Noida.";
+  document.querySelectorAll('a[href^="https://wa.me/919997939525"]').forEach(function (link) {
+    link.href = whatsappUrl;
+  });
+
   // Close mobile navbar after clicking a link
   document.querySelectorAll("#mainNav .nav-link").forEach(function(link) {
     link.addEventListener("click", function() {
@@ -61,8 +66,11 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    message.textContent = "Thank you! Your enquiry has been received.";
+    const formWhatsappUrl = form.querySelector("[data-whatsapp-url]").dataset.whatsappUrl;
+
+    message.textContent = "Opening WhatsApp...";
     message.style.color = "#27824b";
+    window.open(formWhatsappUrl, "_blank", "noopener,noreferrer");
     form.reset();
   });
 });
