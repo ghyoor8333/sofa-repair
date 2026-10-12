@@ -282,7 +282,7 @@ a {
   padding: 60px 0;
 }
 .section-heading {
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: 0 auto;
 }
 .section-heading h2,
